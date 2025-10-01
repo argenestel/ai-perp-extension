@@ -1,0 +1,27 @@
+{
+	"manifest_version": 3,
+	"name": "Trader Assistant",
+	"version": "1.0",
+	"description": "A professional trading assistant chat interface in a browser sidepanel built with React and ShadCN UI.",
+	"background": {
+		"service_worker": "service-worker.js"
+	},
+	"action": {
+		"default_title": "Open Trader Assistant"
+	},
+	"permissions": ["sidePanel", "tabs", "storage", "scripting", "activeTab"],
+	"content_scripts": [
+		{
+			"matches": ["<all_urls>"],
+			"js": ["content.js"]
+		}
+	],
+	"commands": {
+		"_execute_action": {
+			"suggested_key": {
+				"default": "Ctrl+Shift+C",
+				"mac": "Command+Shift+C"
+			}
+		}
+	}
+}
